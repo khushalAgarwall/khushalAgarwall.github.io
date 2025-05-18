@@ -18,8 +18,10 @@ typeTitle();
 // Bounce animation retrigger on hover for all links
 document.querySelectorAll('a').forEach(link => {
   link.addEventListener('mouseenter', () => {
-    link.style.animation = 'none';      // reset animation
-    void link.offsetWidth;               // trigger reflow
-    link.style.animation = 'bounce 0.6s'; // apply bounce animation
+    link.classList.add('bounce');
+  });
+
+  link.addEventListener('animationend', () => {
+    link.classList.remove('bounce');
   });
 });
