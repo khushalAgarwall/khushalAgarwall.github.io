@@ -1,19 +1,25 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const text = "Hi! I'm Khushal! ";
-    const wavingHand = "👋";
-    const titleElem = document.getElementById("main-title");
-    let index = 0;
-  
-    function type() {
-      if (index < text.length) {
-        titleElem.textContent += text.charAt(index);
-        index++;
-        setTimeout(type, 120);
-      } else {
-        titleElem.textContent += wavingHand; // Add waving hand after typing
-      }
-    }
-  
-    type();
+// Typing animation for the title
+const title = document.getElementById('title');
+const fullText = "Hi! I'm Khushal! ";
+const wavingHand = "👋";
+let index = 0;
+
+function typeTitle() {
+  if (index < fullText.length) {
+    title.textContent += fullText.charAt(index);
+    index++;
+    setTimeout(typeTitle, 120);
+  } else {
+    title.textContent += ' ' + wavingHand;
+  }
+}
+typeTitle();
+
+// Bounce animation retrigger on hover for all links
+document.querySelectorAll('a').forEach(link => {
+  link.addEventListener('mouseenter', () => {
+    link.style.animation = 'none';      // reset animation
+    void link.offsetWidth;               // trigger reflow
+    link.style.animation = 'bounce 0.6s'; // apply bounce animation
   });
-  
+});
