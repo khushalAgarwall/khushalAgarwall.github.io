@@ -1,19 +1,29 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const text = "Hi! I'm Khushal! ";
-    const wavingHand = "👋";
-    const titleElem = document.getElementById("main-title");
+document.addEventListener("DOMContentLoaded", () => {
+    const title = document.getElementById("title");
+    const Text = "Hi! I'm Khushal 👋";
     let index = 0;
   
-    function type() {
-      if (index < text.length) {
-        titleElem.textContent += text.charAt(index);
+    function typeTitle() {
+      if (index < fullText.length) {
+        title.textContent += fullText.charAt(index);
         index++;
-        setTimeout(type, 120);
+        setTimeout(typeTitle, 120);
       } else {
-        titleElem.textContent += wavingHand; // Add waving hand after typing
+        title.textContent += ' ' + wavingHand;
       }
     }
   
-    type();
+    typeTitle();
+  
+    // Add bounce animation to all links
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        link.classList.add('bounce');
+      });
+  
+      link.addEventListener('animationend', () => {
+        link.classList.remove('bounce');
+      });
+    });
   });
   
