@@ -3,8 +3,8 @@ body {
   margin: 0;
   padding: 0 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: white;
-  color: black;
+  background: #FAF8F1; /* very light cream */
+  color: #4B4539; /* deep brown-gray */
   line-height: 1.6;
   max-width: 800px;
   margin-left: auto;
@@ -17,21 +17,24 @@ h1 {
   font-size: 3rem;
   margin-top: 60px;
   margin-bottom: 10px;
+  color: #A18F74; /* warm beige */
 }
 p.description {
   text-align: center;
   font-size: 1.2rem;
   margin-bottom: 40px;
   font-weight: 500;
+  color: #7B6E62; /* medium warm taupe */
 }
 section {
   margin-bottom: 60px;
 }
 h2 {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #A18F74; /* warm beige underline */
   padding-bottom: 8px;
   margin-bottom: 20px;
   font-size: 2rem;
+  color: #4B4539;
 }
 
 /* Footer */
@@ -39,8 +42,8 @@ footer {
   text-align: center;
   padding: 20px 0;
   font-size: 0.9rem;
-  border-top: 1px solid #ddd;
-  color: #666;
+  border-top: 1px solid #C4B8A6; /* light taupe */
+  color: #7B6E62;
   margin-bottom: 40px;
 }
 
@@ -48,7 +51,7 @@ footer {
 a {
   display: inline-block;
   text-decoration: none;
-  color: #0077cc;
+  color: #A18F74; /* warm beige */
   transition: color 0.3s ease;
 }
 @keyframes bounce {
@@ -64,7 +67,7 @@ a {
 }
 a:hover {
   animation: bounce 0.6s;
-  color: #005fa3;
+  color: #C4B8A6; /* lighter taupe on hover */
 }
 
 /* Cards (soft glassy) */
@@ -75,18 +78,18 @@ a:hover {
 }
 .project-card {
   backdrop-filter: blur(12px);
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(230, 215, 185, 0.3); /* warm cream transparent */
   border-radius: 20px;
   padding: 20px;
-  border: 1px solid rgba(200, 200, 200, 0.3);
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  border: 1px solid rgba(196, 184, 166, 0.5); /* light taupe border */
+  box-shadow: 0 8px 32px rgba(161, 143, 116, 0.15); /* warm beige shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   overflow: hidden;
 }
 .project-card:hover {
   transform: scale(1.02);
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 48px rgba(161, 143, 116, 0.3);
 }
 .project-card img {
   width: 100%;
@@ -105,18 +108,19 @@ a:hover {
   width: 100vw;
   height: 100vh;
   backdrop-filter: blur(6px);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(75, 69, 57, 0.3); /* warm dark overlay */
   justify-content: center;
   align-items: center;
 }
 .modal-content {
-  background: white;
+  background: #FAF8F1; /* light cream */
   border-radius: 20px;
   max-width: 600px;
   width: 90%;
   padding: 30px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 40px rgba(75, 69, 57, 0.3);
   position: relative;
+  color: #4B4539;
 }
 .close-modal {
   position: absolute;
@@ -124,6 +128,7 @@ a:hover {
   right: 16px;
   font-size: 1.5rem;
   cursor: pointer;
+  color: #A18F74;
 }
 
 /* Responsive */
