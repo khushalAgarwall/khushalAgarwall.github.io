@@ -57,27 +57,28 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
-      modal.style.display = 'block';
+      // Show modal with class toggle
+      modal.classList.add('show');
       document.body.style.overflow = 'hidden';
     });
   });
 
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
+  function closeModal() {
+    modal.classList.remove('show');
     document.body.style.overflow = '';
-  });
+  }
+
+  closeBtn.addEventListener('click', closeModal);
 
   window.addEventListener('click', (e) => {
     if (e.target === modal) {
-      modal.style.display = 'none';
-      document.body.style.overflow = '';
+      closeModal();
     }
   });
 
   window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.style.display === 'block') {
-      modal.style.display = 'none';
-      document.body.style.overflow = '';
+    if (e.key === 'Escape' && modal.classList.contains('show')) {
+      closeModal();
     }
   });
 });
