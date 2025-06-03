@@ -68,6 +68,20 @@
       font-size: 24px;
       cursor: pointer;
     }
+
+    .image-row {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .image-row img {
+      width: 48%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
   </style>
 </head>
 <body>
@@ -83,24 +97,42 @@
   <section id="experience-projects">
     <h2>Experience & Projects</h2>
     <div class="project-grid">
-      <div class="project-card" data-title="Prompt Perfekt" data-description="Built animations & login features in the landing page using React, Framer Motion, and Aceternity UI.">
+
+      <div class="project-card" 
+           data-title="Prompt Perfekt" 
+           data-description="Built animations & login features in the landing page using React, Framer Motion, and Aceternity UI."
+           data-images='["pp1.png]'>
         <h3>Prompt Perfekt</h3>
         <p>Built animations & login features using modern stacks.</p>
         <a href="https://www.promptperfekt.com/" target="_blank">Visit</a>
       </div>
-      <div class="project-card" data-title="CancerScope" data-description="Won 16th rank in Code Red Hackathon 2022. Built an app for early cancer detection using ML & UI-based screening.">
+
+      <div class="project-card" 
+           data-title="CancerScope" 
+           data-description="Won 16th rank in Code Red Hackathon 2022. An early cancer detection tool that evaluates users' lifestyle through a simple questionnaire. Using a custom ML model, it assesses cancer risk and promotes awareness, especially targeting tier 2 and 3 cities by collaborating with hospitals to enable early diagnosis and timely assistance.<em>(Developed during my 11th grade as an early foray into AI-driven healthcare solutions.)</em>"
+           data-images='["figmaUI1.png", "figmaUI2.png"]'>
         <h3>CancerScope</h3>
         <p>Hackathon-winning cancer detection app.</p>
       </div>
-      <div class="project-card" data-title="ReelVault" data-description="AI-powered Telegram bot that extracts and saves useful content from Instagram Reels and organizes them smartly.">
+
+      <div class="project-card" 
+           data-title="ReelVault" 
+           data-description="AI-powered Telegram bot that extracts and saves useful content from Instagram Reels and organizes them smartly."
+           data-images='[]'>
         <h3>ReelVault</h3>
         <p>Telegram bot that extracts insights from reels.</p>
         <a href="https://github.com/khushalAgarwall/ReelVault" target="_blank">GitHub</a>
       </div>
-      <div class="project-card" data-title="SIH Hackathon" data-description="Secured 22nd rank nationally. Built a warehouse dashboard with real-time inventory management, anomaly alerts, and data visualization.">
+
+      <div class="project-card" 
+           data-title="SIH Hackathon" 
+           data-description="Secured 22nd rank nationally. Built a warehouse dashboard with real-time inventory management, anomaly alerts, and data visualization."
+           data-images='[]'>
         <h3>SIH Hackathon</h3>
         <p>Warehouse dashboard for Smart India Hackathon.</p>
+        <a href = "https://drive.google.com/file/d/18XxigcyEJdQcCwXELtnu4XesXno74fEC/view?usp=sharing" target="_blank">Link for presentation</a>
       </div>
+
     </div>
   </section>
 
@@ -130,6 +162,7 @@
     <div class="modal-content">
       <span class="close-modal" id="closeModal">&times;</span>
       <h2 id="modalTitle"></h2>
+      <div class="image-row" id="modalImages"></div>
       <p id="modalDescription"></p>
     </div>
   </div>
@@ -137,3 +170,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
