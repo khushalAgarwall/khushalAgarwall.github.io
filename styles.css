@@ -163,9 +163,12 @@ a:hover {
   border-radius: 20px;
   max-width: 600px;
   width: 90%;
+  max-height: 80vh;
   padding: 30px;
   box-shadow: 0 10px 40px rgba(0,0,0,0.3);
   position: relative;
+  overflow-y: auto; 
+  border-top: 3px solid #a18f74;
 }
 .close-modal {
   position: absolute;
