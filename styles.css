@@ -41,35 +41,35 @@ h1 {
   font-size: 3rem;
   margin-top: 60px;
   margin-bottom: 10px;
+  white-space: nowrap;       /* prevent wrapping */
+  overflow: hidden;          /* hide overflow */
+  text-overflow: ellipsis;   /* add ... if clipped */
 }
 
-/* Glassy title panel with subtle shine */
 .title-wrapper {
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(8px);
   background: rgba(255, 255, 255, 0.08);
   border-radius: 20px;
-  padding: 12px 30px;
+  padding: 10px 20px;
   display: inline-block;
-  margin-top: 60px;
+  margin: 60px auto 0 auto;  /* shorthand: top 60px, auto horizontal centers */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.25);
   position: relative;
   overflow: hidden;
-  animation: fadeInSlide 0.8s ease-out;
+  max-width: 90vw;           /* max width so it doesn't stretch too far */
+  white-space: nowrap;       /* keep title on one line */
 }
 
-/* Fade-in slide animation for the panel */
 @keyframes fadeInSlide {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.title-wrapper {
+  animation: fadeInSlide 0.8s ease-out;
 }
 
 p.description {
@@ -107,7 +107,6 @@ a {
   color: #0077CC;
   transition: color 0.3s ease;
 }
-
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
@@ -119,7 +118,6 @@ a {
     transform: translateY(-5px);
   }
 }
-
 a:hover {
   animation: bounce 0.6s;
   color: #005fa3;
@@ -131,7 +129,6 @@ a:hover {
   grid-template-columns: 1fr;
   gap: 20px;
 }
-
 .project-card {
   backdrop-filter: blur(12px);
   background: rgba(230, 215, 185, 0.3);
@@ -143,12 +140,10 @@ a:hover {
   cursor: pointer;
   overflow: hidden;
 }
-
 .project-card:hover {
   transform: scale(1.02);
   box-shadow: 0 12px 48px rgba(161, 143, 116, 0.3);
 }
-
 .project-card img {
   width: 100%;
   max-height: 200px;
@@ -161,5 +156,92 @@ a:hover {
 @keyframes smoothPopup {
   0% {
     opacity: 0;
+    transform: scale(0.9);
   }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(6px);
+  background-color: rgba(75, 69, 57, 0.3);
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  transform: scale(0.9);
+}
+
+.modal.show {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+  animation: smoothPopup 0.4s ease forwards;
+}
+
+.modal-content {
+  background: #FAF8F1;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  position: relative;
+  overflow-y: auto; 
+  border-top: 3px solid #a18f74;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  body {
+    padding: 0 10px;
+  }
+  h1 {
+    font-size: 2.2rem;
+    white-space: normal; /* allow wrapping on small screens */
+  }
+  .title-wrapper {
+    white-space: normal; /* allow wrapping on small screens */
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  .project-cards {
+    grid-template-columns: 1fr;
+  }
+  .project-card img {
+    max-height: 160px;
+  }
+}
+
+/* Modal Images */
+#modalImages {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+#modalImages img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
 }
