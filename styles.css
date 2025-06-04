@@ -37,12 +37,16 @@ body > * {
 
 /* Headings */
 h1 {
+ 
+  font-size: 2.5rem;
+  line-height: 1.2;
+  max-width: 100%;    /* prevent overflow */
+  white-space: normal; /* allow wrapping */
+  word-break: break-word;
+  margin: 0;          /* remove default margins */
   text-align: center;
-  font-size: 3rem;
   margin-top: 60px;
   margin-bottom: 10px;
-  white-space: nowrap;       /* prevent wrapping */
-  overflow: hidden;          /* hide overflow */
   text-overflow: ellipsis;   /* add ... if clipped */
 }
 
