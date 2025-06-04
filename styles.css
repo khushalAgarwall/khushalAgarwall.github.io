@@ -43,15 +43,17 @@ h1 {
   margin-bottom: 10px;
 }
 .title-wrapper {
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(2px);
+  background: rgba(255, 255, 255, 0.1); /* translucent */
   border-radius: 20px;
   padding: 20px 30px;
   display: inline-block;
   margin-top: 60px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
 @keyframes fadeInSlide {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
