@@ -1,4 +1,4 @@
-/* Base reset and layout */
+/* Base reset and layout */More actions
 body {
   margin: 0;
   padding: 0 20px;
@@ -37,30 +37,20 @@ body > * {
 
 /* Headings */
 h1 {
- 
-  font-size: 3rem;
-  line-height: 1.2;
-  max-width: 100%;    /* prevent overflow */
-  white-space: normal; /* allow wrapping */
-  word-break: break-word;
-  margin: 0;          /* remove default margins */
   text-align: center;
+  font-size: 3rem;
   margin-top: 60px;
   margin-bottom: 10px;
-  text-overflow: ellipsis;   /* add ... if clipped */
 }
-
 p.description {
   text-align: center;
   font-size: 1.2rem;
   margin-bottom: 40px;
   font-weight: 500;
 }
-
 section {
   margin-bottom: 60px;
 }
-
 h2 {
   border-bottom: 2px solid #000000;
   padding-bottom: 8px;
@@ -167,6 +157,7 @@ a:hover {
   animation: smoothPopup 0.4s ease forwards;
 }
 
+
 .modal-content {
   background: #FAF8F1;
   border-radius: 20px;
@@ -179,7 +170,6 @@ a:hover {
   overflow-y: auto; 
   border-top: 3px solid #a18f74;
 }
-
 .close-modal {
   position: absolute;
   top: 10px;
@@ -195,10 +185,6 @@ a:hover {
   }
   h1 {
     font-size: 2.2rem;
-    white-space: normal; /* allow wrapping on small screens */
-  }
-  .title-wrapper {
-    white-space: normal; /* allow wrapping on small screens */
   }
   h2 {
     font-size: 1.5rem;
