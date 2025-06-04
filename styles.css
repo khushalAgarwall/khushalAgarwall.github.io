@@ -45,7 +45,6 @@ h1 {
 .title-wrapper {
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
   padding: 20px 30px;
   display: inline-block;
