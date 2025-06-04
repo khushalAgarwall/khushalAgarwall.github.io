@@ -133,9 +133,7 @@ a:hover {
 }
 
 .modal {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  display: none;
   position: fixed;
   z-index: 10;
   top: 0; left: 0;
@@ -145,17 +143,20 @@ a:hover {
   background-color: rgba(75, 69, 57, 0.3);
   justify-content: center;
   align-items: center;
-  display: flex;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
-  animation: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  transform: scale(0.9);
 }
 
 .modal.show {
+  display: flex;
   opacity: 1;
-  visibility: visible;
   pointer-events: auto;
+  transform: scale(1);
   animation: smoothPopup 0.4s ease forwards;
 }
+
 
 .modal-content {
   background: #FAF8F1;
